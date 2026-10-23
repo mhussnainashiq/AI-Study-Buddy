@@ -41,7 +41,7 @@ cp .env.example .env
 # Edit backend/.env and set OPENAI_API_KEY=your_key
 uvicorn app.main:app --reload
 ```
-API docs: http://127.0.0.1:8000/docs. Health: http://127.0.0.1:8000/api/health.
+
 
 ## Frontend setup
 Open a second terminal:
@@ -53,7 +53,7 @@ Windows PowerShell equivalent is the same commands. Then:
 ```bash
 npm run dev
 ```
-Visit http://localhost:5173. Configure `VITE_API_URL` in `frontend/.env` only if your API is not at `http://localhost:8000`.
+
 
 ## OCR for scanned PDFs
 Install Tesseract OCR and make sure its executable is available on PATH. Set `OCR_ENABLED=true` in `backend/.env`. OCR is attempted only when extracted PDF text is almost empty. If Tesseract is missing, the API reports an actionable error.
@@ -91,8 +91,7 @@ Tests do not make paid AI calls. They validate missing-key handling and quiz gra
 - PDF has no readable text: install Tesseract and enable OCR, or upload a text-based PDF.
 - SQLite locked: stop duplicate server/test processes and retry.
 
-## Screenshots
-Add screenshots of the running dashboard, upload workflow, flashcards, and quiz results here after local launch.
+
 
 ## Future improvements
 Authentication and per-user isolation, vector embeddings, document citations with page-level chunk metadata, streaming AI responses, spaced repetition, export to PDF/Anki, Alembic migrations, and deployment automation.
